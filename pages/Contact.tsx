@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellidos: '',
+    email: '',
+    asunto: '',
+    mensaje: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const { nombre, apellidos, email, asunto, mensaje } = formData;
+    
+    // Construct the mailto link
+    const subject = encodeURIComponent(asunto ? `[Web Contacto] ${asunto}` : "Nuevo mensaje desde la web");
+    const body = encodeURIComponent(
+      `Nombre: ${nombre} ${apellidos}\n` +
+      `Correo: ${email}\n\n` +
+      `Mensaje:\n${mensaje}`
+    );
+    
+    // Open the default email client
+    window.location.href = `mailto:pksdavidbosch@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="bg-white min-h-screen flex flex-col">
       {/* Header */}
@@ -30,7 +62,7 @@ const Contact: React.FC = () => {
                       {/* Logo */}
                       <div className="mb-6">
                           <img 
-                            src="/logo.png" 
+                            src="/public/logo.png" 
                             alt="Packengers" 
                             className="h-16 w-auto object-contain bg-white/10 rounded px-2 backdrop-blur-sm"
                           />
@@ -76,32 +108,67 @@ const Contact: React.FC = () => {
                           No dude en <br/>contactar con nosotros
                       </h2>
 
-                      <form className="space-y-4">
+                      <form className="space-y-4" onSubmit={handleSubmit}>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
                                   <label className="block text-orange-200 text-sm font-bold mb-1 ml-1">Nombre</label>
-                                  <input type="text" className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" />
+                                  <input 
+                                    type="text" 
+                                    name="nombre"
+                                    value={formData.nombre}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" 
+                                  />
                               </div>
                               <div>
                                   <label className="block text-orange-200 text-sm font-bold mb-1 ml-1">Apellidos</label>
-                                  <input type="text" className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" />
+                                  <input 
+                                    type="text" 
+                                    name="apellidos"
+                                    value={formData.apellidos}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" 
+                                  />
                               </div>
                           </div>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
                                   <label className="block text-orange-200 text-sm font-bold mb-1 ml-1">Correo</label>
-                                  <input type="email" className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" />
+                                  <input 
+                                    type="email" 
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" 
+                                  />
                               </div>
                               <div>
                                   <label className="block text-orange-200 text-sm font-bold mb-1 ml-1">Asunto</label>
-                                  <input type="text" className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" />
+                                  <input 
+                                    type="text" 
+                                    name="asunto"
+                                    value={formData.asunto}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800" 
+                                  />
                               </div>
                           </div>
 
                           <div>
                               <label className="block text-orange-200 text-sm font-bold mb-1 ml-1">Mensaje</label>
-                              <textarea rows={5} className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800 resize-none"></textarea>
+                              <textarea 
+                                rows={5} 
+                                name="mensaje"
+                                value={formData.mensaje}
+                                onChange={handleChange}
+                                required
+                                className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF9900] shadow-sm text-gray-800 resize-none"
+                              ></textarea>
                           </div>
 
                           <div className="pt-2">

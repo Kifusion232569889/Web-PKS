@@ -22,11 +22,11 @@ const Header: React.FC = () => {
           
           {/* Logo Area */}
           <Link to="/" className="flex items-center group">
-            {/* Using logo.png as requested for the header logo on all pages */}
+            {/* Using logo.png without background box for cleaner look */}
             <img 
-              src="/logo.png" 
+              src="/public/logo.png" 
               alt="Packengers" 
-              className="h-10 w-auto object-contain bg-white/10 rounded px-2 py-1 backdrop-blur-sm"
+              className="h-12 w-auto object-contain"
             />
           </Link>
 
