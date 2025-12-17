@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           {/* Logo Area */}
           <Link to="/" className="flex items-center group">
             <img 
-              src="/public/logo-icon.png" 
+              src="/logo-icon.png" 
               alt="Packengers" 
               className="h-12 w-auto object-contain"
             />

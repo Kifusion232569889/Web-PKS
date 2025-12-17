@@ -74,7 +74,7 @@ const Terms: React.FC = () => {
         <div className="mt-16 flex justify-end">
              <div className="flex flex-col items-center">
                  {/* Updated to new icon logo */}
-                 <img src="/public/logo-icon.png" alt="Packengers" className="h-16 w-auto" />
+                 <img src="/logo-icon.png" alt="Packengers" className="h-16 w-auto" />
              </div>
         </div>
 

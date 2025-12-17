@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
                       <div className="mb-6">
                           {/* Updated to new icon logo */}
                           <img 
-                            src="/public/logo-icon.png" 
+                            src="/logo-icon.png" 
                             alt="Packengers" 
                             className="h-16 w-auto object-contain bg-white/10 rounded px-2 backdrop-blur-sm"
                           />
