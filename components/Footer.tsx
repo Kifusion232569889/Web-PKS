@@ -10,28 +10,43 @@ const Footer: React.FC = () => {
         {/* Direction */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Dirección</h3>
-          <p className="text-lg leading-relaxed font-medium">
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Av.+Parc+Logístic,+2-10,+Sants-Montjuïc,+08040+Barcelona" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-lg leading-relaxed font-medium hover:text-[#3B71CA] transition-colors block"
+          >
             Av. Parc Logístic, 2- 10,<br />
             Sants-Montjuïc, 08040<br />
             Barcelona
-          </p>
+          </a>
         </div>
 
         {/* Contactanos */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Contáctanos</h3>
-          <p className="text-lg mb-2 font-medium">(+34) 624 14 42 53</p>
-          <p className="text-lg font-medium">pksdavidbosch@gmail.com</p>
+          <a 
+            href="tel:+34624144253" 
+            className="text-lg mb-2 font-medium hover:text-[#3B71CA] transition-colors block"
+          >
+            (+34) 624 14 42 53
+          </a>
+          <a 
+            href="mailto:pksdavidbosch@gmail.com" 
+            className="text-lg font-medium hover:text-[#3B71CA] transition-colors block"
+          >
+            pksdavidbosch@gmail.com
+          </a>
         </div>
 
         {/* Legal */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Legal</h3>
           <div className="flex flex-col space-y-2 font-medium">
-            <Link to="/privacy" className="text-lg hover:underline underline-offset-4 decoration-2">
+            <Link to="/privacy" className="text-lg hover:text-[#3B71CA] transition-colors">
               Políticas de Privacidad
             </Link>
-            <Link to="/terms" className="text-lg hover:underline underline-offset-4 decoration-2">
+            <Link to="/terms" className="text-lg hover:text-[#3B71CA] transition-colors">
               Términos y condiciones
             </Link>
           </div>
@@ -45,7 +60,7 @@ const Footer: React.FC = () => {
               href="https://www.instagram.com/packengers/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-[#FF9900] p-2 rounded-full hover:bg-orange-100 transition-colors"
+              className="bg-white text-[#FF9900] p-2 rounded-full shadow-md transition-all duration-300 hover:scale-110 hover:bg-[#3B71CA]"
             >
               <Instagram size={28} />
             </a>
@@ -53,7 +68,7 @@ const Footer: React.FC = () => {
               href="https://www.facebook.com/people/PKS-Packengers/61582465356622/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-[#FF9900] p-2 rounded-full hover:bg-orange-100 transition-colors"
+              className="bg-white text-[#FF9900] p-2 rounded-full shadow-md transition-all duration-300 hover:scale-110 hover:bg-[#3B71CA]"
             >
               <Facebook size={28} />
             </a>
@@ -61,7 +76,7 @@ const Footer: React.FC = () => {
               href="https://www.linkedin.com/company/packengers/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-[#FF9900] p-2 rounded-full hover:bg-orange-100 transition-colors"
+              className="bg-white text-[#FF9900] p-2 rounded-full shadow-md transition-all duration-300 hover:scale-110 hover:bg-[#3B71CA]"
             >
               <Linkedin size={28} />
             </a>

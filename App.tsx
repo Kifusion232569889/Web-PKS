@@ -6,6 +6,7 @@ import CargaFull from './pages/CargaFull';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Demo from './pages/Demo';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -38,6 +39,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout showHeader={false}><Home /></Layout>} />
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/cargafull" element={<Layout><CargaFull /></Layout>} />
+        <Route path="/demo" element={<Layout><Demo /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/privacy" element={<Layout><Privacy /></Layout>} />
         <Route path="/terms" element={<Layout><Terms /></Layout>} />
