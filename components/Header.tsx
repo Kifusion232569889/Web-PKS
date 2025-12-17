@@ -22,9 +22,9 @@ const Header: React.FC = () => {
           
           {/* Logo Area */}
           <Link to="/" className="flex items-center group">
-            {/* Using logo.png without background box for cleaner look */}
+            {/* Using logo-icon.png - make sure to save the new image as public/logo-icon.png */}
             <img 
-              src="/public/logo.png" 
+              src="/public/logo-icon.png" 
               alt="Packengers" 
               className="h-12 w-auto object-contain"
             />

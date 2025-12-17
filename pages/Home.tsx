@@ -38,12 +38,12 @@ const Home: React.FC = () => {
           {/* Left Content */}
           <div className="text-white space-y-6 z-10 flex flex-col items-start lg:pl-4">
              
-             {/* Logo Section - Removed background, increased size */}
+             {/* Logo Section - Adjusted size for square icon */}
              <div className="mb-4">
                 <img 
-                  src="/public/logo.png" 
+                  src="/public/logo-icon.png" 
                   alt="Packengers Logo" 
-                  className="h-40 md:h-56 lg:h-64 w-auto object-contain"
+                  className="h-32 md:h-48 lg:h-56 w-auto object-contain"
                 />
              </div>
 

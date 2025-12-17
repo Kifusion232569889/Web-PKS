@@ -7,11 +7,11 @@ const About: React.FC = () => {
 
   // Updated to include team1.png through team5.png
   const teamImages = [
-    "/team1.png", 
-    "/team2.png", 
-    "/team3.png", 
-    "/team4.png", 
-    "/team5.png"
+    "/public/team1.png", 
+    "/public/team2.png", 
+    "/public/team3.png", 
+    "/public/team4.png", 
+    "/public/team5.png"
   ];
 
   const nextSlide = () => {
@@ -48,7 +48,8 @@ const About: React.FC = () => {
             
             {/* Logo Image - Aligned to the right as requested */}
             <div className="w-full max-w-4xl flex justify-end mb-6">
-                 <img src="/logo.png" alt="Packengers" className="h-24 md:h-32 w-auto" />
+                 {/* Updated to new icon logo */}
+                 <img src="/public/logo-icon.png" alt="Packengers" className="h-24 md:h-32 w-auto" />
             </div>
             
             {/* Text Content - Indented Paragraphs */}

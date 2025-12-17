@@ -61,8 +61,9 @@ const Contact: React.FC = () => {
                   <div className="md:w-1/3 text-white space-y-8 flex flex-col items-center md:items-start text-center md:text-left">
                       {/* Logo */}
                       <div className="mb-6">
+                          {/* Updated to new icon logo */}
                           <img 
-                            src="/public/logo.png" 
+                            src="/public/logo-icon.png" 
                             alt="Packengers" 
                             className="h-16 w-auto object-contain bg-white/10 rounded px-2 backdrop-blur-sm"
                           />
